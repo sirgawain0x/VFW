@@ -1,0 +1,7 @@
+Git Links
+
+SSH: git@github.com:g2musicgroup/VFW-Site.git
+
+HTTP: https://g2musicgroup@github.com/g2musicgroup/VFW-Site.git
+
+gh-pages: http://g2musicgroup.github.com/VFW-Site/
