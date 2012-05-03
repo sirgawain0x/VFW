@@ -31,7 +31,8 @@ window.addEventListener("DOMContentLoaded", function(){
 
 	 //Find Value of selected radio button
 	function getSelectedRadio () {
-	 	var radio = document.forms[0].sex;
+	 	var radio = document.forms[0].sex,
+	 		sexValue;
 	 	for (var i = 0; i < radio.length; i++) {
 	 		if (radio[i].checked){
 	 			sexValue = radio[i].value;
@@ -141,7 +142,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	 		var obj = JSON.parse(value);
 	 		var makeSubList = document.createElement('ul');
 	 		makeli.appendChild(makeSubList);
-	 		getImage(makeSubList);
+	 		getImage(obj.group[1], makeSubList);
 	 		for(var b in obj){
 	 			var makeSubli = document.createElement('li');
 	 			makeSubList.appendChild(makeSubli);
@@ -152,15 +153,15 @@ window.addEventListener("DOMContentLoaded", function(){
 	 		makeItemLinks(localStorage.key(i), linksli); // Create our edit and delete links/buttons for each item in local storage.
 	 	};
 	 }; 
-	 // get the image for each category being displayed
-	 function getImage (makeSubList) {
+	 // get the image for the right category being displayed
+	 function getImage (iconName, makeSubList) {
 	 	var imageLi = document.createElement('li');
 	 	makeSubList.appendChild(imageLi);
 	 	var newImg = document.createElement('img');
-	 	var setSrc = newImg.setAttribute("src", "icons/images/icon_01.png");
+	 	var setSrc = newImg.setAttribute("src", "icons/images/A.png");
 	 	imageLi.appendChild(newImg);
-	 	// body...
-	 }
+	 
+	 };
 	 //Auto Populate Local Storage
 	 function autoFillData () {
 		// The actual actual JSON OBJECT data required for this to work is coming from out JSON. js file which is loaded to out HTML page.
